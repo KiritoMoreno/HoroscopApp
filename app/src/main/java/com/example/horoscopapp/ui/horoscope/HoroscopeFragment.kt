@@ -17,6 +17,7 @@ class HoroscopeFragment : Fragment() {
     private val binding get() = _binding!!
     private val horoscopeViewModel by viewModels <HoroscopeViewModel>()
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
