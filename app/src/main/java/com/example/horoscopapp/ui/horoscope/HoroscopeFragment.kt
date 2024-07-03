@@ -53,7 +53,11 @@ class HoroscopeFragment : Fragment() {
     }
 
     private fun initList() {
-        horoscopeAdapter = HoroscopeAdapter()
+        horoscopeAdapter = HoroscopeAdapter(
+            onItemSelected = {
+                Toast.makeText(context,getString(it.name), Toast.LENGTH_LONG).show()
+            }
+        )
 
         binding.rvHoroscope.apply {
             layoutManager = GridLayoutManager(context, 2)
