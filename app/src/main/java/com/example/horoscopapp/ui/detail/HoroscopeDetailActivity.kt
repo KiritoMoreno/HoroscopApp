@@ -21,5 +21,6 @@ class HoroscopeDetailActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         args.type
+        
     }
 }
