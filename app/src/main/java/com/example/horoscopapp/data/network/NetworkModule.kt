@@ -5,13 +5,21 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)   //The scope and that everyone can install it.
 object NetworkModule {
 
     @Provides
+    @Singleton  //It allows us to have a single instance of a class, which can only be created once.
     fun provideRetrofit():Retrofit{
-
+        //Here, we need to configure this to return a Retrofit object and once that's done, we can inject Retrofit everywhere.
+        return Retrofit
+            .Builder()
+            .baseUrl("https://newastro.vercel.app/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
     }
 }
