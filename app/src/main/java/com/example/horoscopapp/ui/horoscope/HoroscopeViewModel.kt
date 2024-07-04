@@ -1,7 +1,7 @@
 package com.example.horoscopapp.ui.horoscope
 
 import androidx.lifecycle.ViewModel
-import com.example.horoscopapp.data.HoroscopeProvider
+import com.example.horoscopapp.data.providers.HoroscopeProvider
 import com.example.horoscopapp.domain.model.HoroscopeInfo
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow

@@ -1,4 +1,4 @@
-package com.example.horoscopapp.data
+package com.example.horoscopapp.data.providers
 
 import com.example.horoscopapp.domain.model.HoroscopeInfo
 import javax.inject.Inject
