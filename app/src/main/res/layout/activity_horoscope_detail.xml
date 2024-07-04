@@ -15,6 +15,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         tools:background="@color/red"
         />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ivback"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/ic_back"
+        android:padding="24dp"
+        app:tint="@color/gold"
+        />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -36,6 +46,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:text="Helloooooooo horoscope "
+        android:theme="@style/Title"
         />
     <ProgressBar
         android:layout_width="wrap_content"
