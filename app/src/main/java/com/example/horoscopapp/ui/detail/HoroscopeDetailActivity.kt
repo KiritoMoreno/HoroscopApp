@@ -48,7 +48,7 @@ class HoroscopeDetailActivity : AppCompatActivity() {
         }
     }
     private fun loadingState(){
-        binding.progressBar.isVisible = true    
+        binding.progressBar.isVisible = true
     }
     private fun errorState(){
 
