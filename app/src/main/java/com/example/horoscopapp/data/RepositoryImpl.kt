@@ -13,7 +13,7 @@ class RepositoryImpl @Inject constructor(private val apiService: HoroscopeApiSer
     override suspend fun getPrediction(sign: String): PredictionModel? {
         // Request or run the service
         kotlin.runCatching { apiService.getHoroscope(sign) }
-            .onSuccess { return it }
+            .onSuccess { return it.toDomain() }  // We recover a response type model and convert it to model in the domain layer
             .onFailure { Log.i("Moreno", "Error ${it.message}") }
         return null
     }
