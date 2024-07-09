@@ -22,4 +22,10 @@ object NetworkModule {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
+
+    // Link this object with horoscopeApiService.kt
+    @Provides
+    fun provideHoroscopeApiService(retrofit: Retrofit):HoroscopeApiService{
+        return retrofit.create(HoroscopeApiService::class.java)
+    }
 }
