@@ -8,7 +8,10 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.navArgs
+import com.example.horoscopapp.R
 import com.example.horoscopapp.databinding.ActivityHoroscopeDetailBinding
+import com.example.horoscopapp.domain.model.HoroscopeModel
+import com.example.horoscopapp.domain.model.HoroscopeModel.*
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -23,7 +26,7 @@ class HoroscopeDetailActivity : AppCompatActivity() {
         binding = ActivityHoroscopeDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initUI()
-        horoscopeDetailViewModel.getHoroscope(args.type.name) // loading the horoscope
+        horoscopeDetailViewModel.getHoroscope(args.type) // loading the horoscope
         
     }
 
@@ -60,5 +63,21 @@ class HoroscopeDetailActivity : AppCompatActivity() {
         binding.progressBar.isVisible = false
         binding.tvTitle.text = state.sign
         binding.tvBody.text = state.prediction
+
+        val image  = when(state.horoscopeModel){
+            Aries -> R.drawable.detail_aries
+            Aquarius -> R.drawable.detail_aquarius
+            Cancer -> R.drawable.detail_cancer
+            Capricorn -> R.drawable.detail_capricorn
+            Gemini -> R.drawable.detail_gemini
+            Leo -> R.drawable.detail_leo
+            Libra -> R.drawable.detail_libra
+            Pisces -> R.drawable.detail_pisces
+            Sagittarius -> R.drawable.detail_sagittarius
+            Scorpio -> R.drawable.detail_scorpio
+            Taurus -> R.drawable.detail_taurus
+            Virgo -> R.drawable.detail_virgo
+        }
+        binding.ivDetail.setImageResource(image)
     }
 }
