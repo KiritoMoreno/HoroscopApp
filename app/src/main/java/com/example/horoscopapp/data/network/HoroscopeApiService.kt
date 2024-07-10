@@ -5,7 +5,7 @@ import retrofit2.http.Path
 
 interface HoroscopeApiService {
 
-    @GET("/{sing}")
+    @GET("/{sign}")
     suspend fun getHoroscope(@Path("sign") sign: String): PredictionResponse
 
 }
