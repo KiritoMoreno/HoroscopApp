@@ -1,5 +1,6 @@
 package com.example.horoscopapp.data.network
 
+import com.example.horoscopapp.BuildConfig.BASE_URL
 import com.example.horoscopapp.data.RepositoryImpl
 import com.example.horoscopapp.data.core.interceptors.AuthInterceptor
 import com.example.horoscopapp.domain.model.Repository
@@ -23,7 +24,7 @@ object NetworkModule {
         //Here, we need to configure this to return a Retrofit object and once that's done, we can inject Retrofit everywhere.
         return Retrofit
             .Builder()
-            .baseUrl("https://newastro.vercel.app/")
+            .baseUrl(BASE_URL)
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
