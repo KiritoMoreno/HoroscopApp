@@ -1,6 +1,7 @@
 package com.example.horoscopapp.data.network
 
 import com.example.horoscopapp.data.RepositoryImpl
+import com.example.horoscopapp.data.core.interceptors.AuthInterceptor
 import com.example.horoscopapp.domain.model.Repository
 import dagger.Module
 import dagger.Provides
@@ -29,11 +30,12 @@ object NetworkModule {
     }
     @Provides
     @Singleton
-    fun providesOKHttpClient():OkHttpClient{
+    fun providesOKHttpClient(authInterceptor: AuthInterceptor):OkHttpClient{
         val interceptor = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
         return OkHttpClient
             .Builder()
             .addInterceptor(interceptor)
+            .addInterceptor(authInterceptor)
             .build()
     }
 
