@@ -6,6 +6,8 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
@@ -16,12 +18,22 @@ object NetworkModule {
 
     @Provides
     @Singleton  //It allows us to have a single instance of a class, which can only be created once.
-    fun provideRetrofit():Retrofit{
+    fun provideRetrofit(okHttpClient: OkHttpClient):Retrofit{
         //Here, we need to configure this to return a Retrofit object and once that's done, we can inject Retrofit everywhere.
         return Retrofit
             .Builder()
             .baseUrl("https://newastro.vercel.app/")
+            .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
+            .build()
+    }
+    @Provides
+    @Singleton
+    fun providesOKHttpClient():OkHttpClient{
+        val interceptor = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
+        return OkHttpClient
+            .Builder()
+            .addInterceptor(interceptor)
             .build()
     }
 
