@@ -66,6 +66,9 @@ class LuckFragment : Fragment() {
         })
         binding.ivReverse.startAnimation(slideUpAnimation)
     }
+    private fun growCard(){
+        val growAnimation  = AnimationUtils.loadAnimation(requireContext(),)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
