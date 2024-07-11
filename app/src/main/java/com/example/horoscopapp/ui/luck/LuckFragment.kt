@@ -56,7 +56,7 @@ class LuckFragment : Fragment() {
             }
 
             override fun onAnimationEnd(animation: Animation?) {
-
+                growCard()
             }
 
             override fun onAnimationRepeat(animation: Animation?) {
@@ -74,7 +74,7 @@ class LuckFragment : Fragment() {
             }
 
             override fun onAnimationEnd(animation: Animation?) {
-                
+                //
             }
 
             override fun onAnimationRepeat(animation: Animation?) {
