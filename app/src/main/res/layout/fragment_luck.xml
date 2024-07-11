@@ -17,4 +17,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         />
+
+    <ImageView
+        android:id="@+id/ivReverse"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/card_back_small"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

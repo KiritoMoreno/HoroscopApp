@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.DecelerateInterpolator
+import androidx.core.animation.doOnEnd
 import com.example.horoscopapp.R
 import com.example.horoscopapp.databinding.FragmentLuckBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -39,7 +40,11 @@ class LuckFragment : Fragment() {
         val animator = ObjectAnimator.ofFloat(binding.ivRoulette, View.ROTATION, 0f,degrees.toFloat())
         animator.duration = 2000
         animator.interpolator = DecelerateInterpolator()  //it will start fast and it will finish slow
+        animator.doOnEnd {  }
         animator.start()
+
+    }
+    private fun slideCard(){
 
     }
 
