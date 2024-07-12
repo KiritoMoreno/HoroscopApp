@@ -35,7 +35,16 @@ class LuckFragment : Fragment() {
     }
 
     private fun initUI() {
+        preparePrediction()
         initListeners()
+    }
+
+    private fun preparePrediction() {
+        val luck = randomCardProvider.getLucky()
+        luck?.let{
+            binding.tvLucky.text = getString(it.text)
+            binding.ivLuckCard.setImageResource(it.image)
+        }
     }
 
     private fun initListeners() {
