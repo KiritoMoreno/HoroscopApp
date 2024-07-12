@@ -107,6 +107,8 @@ class LuckFragment : Fragment() {
             }
 
         })
+        
+
         binding.preview.startAnimation(disappearAnimation)
         binding.prediction.startAnimation(appearAnimation)
     }
