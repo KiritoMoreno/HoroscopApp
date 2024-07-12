@@ -1,6 +1,7 @@
 package com.example.horoscopapp.ui.luck
 
 import android.animation.ObjectAnimator
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -40,11 +41,26 @@ class LuckFragment : Fragment() {
     }
 
     private fun preparePrediction() {
-        val luck = randomCardProvider.getLucky()
-        luck?.let{
-            binding.tvLucky.text = getString(it.text)
-            binding.ivLuckCard.setImageResource(it.image)
+        val currentLuck = randomCardProvider.getLucky()
+        currentLuck?.let{luck ->
+            val currentPrediction = getString(luck.text)
+            binding.tvLucky.text = currentPrediction
+            binding.ivLuckCard.setImageResource(luck.image)
+
+            binding.tvShare.setOnClickListener { shareResult(currentPrediction) }
         }
+    }
+
+    private fun shareResult(prediction:String) {
+        // Intent -> We can used to navigate between screens, applications and call Android functions
+        val sendIntent = Intent().apply{
+            action = Intent.ACTION_SEND
+            putExtra(Intent.EXTRA_TEXT,prediction)
+            type ="text/plain" // The intent that launches it detects what type it is. We tell it what type it is.
+        }
+
+        val shareIntent = Intent.createChooser(sendIntent,null)
+        startActivity(shareIntent)
     }
 
     private fun initListeners() {
