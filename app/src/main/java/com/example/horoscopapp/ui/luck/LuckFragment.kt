@@ -67,7 +67,7 @@ class LuckFragment : Fragment() {
 
     @SuppressLint("ClickableViewAccessibility")
     private fun initListeners() {
-        //We override a listener. recived our Listener and can implements our funs
+        //We override a listener.
         binding.ivRoulette.setOnTouchListener (object : OnSwipeTouchListener(requireContext()){
             override fun onSwipeRight() {
                 spinRoulette()
