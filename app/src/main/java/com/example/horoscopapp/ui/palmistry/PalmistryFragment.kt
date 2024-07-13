@@ -1,11 +1,16 @@
 package com.example.horoscopapp.ui.palmistry
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.camera.core.CameraSelector
+import androidx.camera.core.Preview
+import androidx.camera.lifecycle.ProcessCameraProvider
+import androidx.core.content.ContextCompat
 import androidx.core.content.PermissionChecker
 import androidx.fragment.app.Fragment
 import com.example.horoscopapp.databinding.FragmentPalmistryBinding
@@ -27,7 +32,7 @@ class PalmistryFragment : Fragment() {
         isGranted ->
         if(isGranted){
             //Start Camera
-
+            startCamera()
         }else{
 
             Toast.makeText(
@@ -43,11 +48,37 @@ class PalmistryFragment : Fragment() {
 
         if (checkCameraPermission()){
             //Permissions accepted
+            startCamera()
 
         }else{
 
             requestPermissionLauncher.launch(CAMERA_PERMISSION)
         }
+    }
+
+    private fun startCamera() {
+        val cameraProviderFuture = ProcessCameraProvider.getInstance(requireContext())
+
+        cameraProviderFuture.addListener({
+            val cameraProvider = cameraProviderFuture.get()
+
+            val preview = Preview.Builder().build().also {
+                it.setSurfaceProvider(binding.viewFinder.surfaceProvider)
+            }
+
+            val cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
+
+            try{
+                cameraProvider.unbindAll()
+
+                cameraProvider.bindToLifecycle(this, cameraSelector, preview)
+
+
+            }catch (e:Exception){
+                Log.e("Moreno","Something it's not working")
+            }
+
+        }, ContextCompat.getMainExecutor(requireContext()))
     }
 
     private fun checkCameraPermission(): Boolean {
