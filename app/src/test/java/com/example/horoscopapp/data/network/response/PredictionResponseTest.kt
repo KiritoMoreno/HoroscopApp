@@ -1,5 +1,6 @@
 package com.example.horoscopapp.data.network.response
 
+import com.example.horoscopapp.motherobject.HoroscopeMotherObject.anyResponse
 import io.kotlintest.shouldBe
 import org.junit.Assert.*
 import org.junit.Test
@@ -11,7 +12,7 @@ class PredictionResponseTest{
         // We divided the test in three parts.
 
         //Given
-        val horoscopeResponse = PredictionResponse("date","prediction","virgo")
+        val horoscopeResponse = anyResponse
 
         //When
         val predictionModel = horoscopeResponse.toDomain()
