@@ -51,6 +51,13 @@ class MainActivityTest{
 
     }
 
+    /*
+    "If we have an error, it could be due to the animations. Follow these steps:
+    Go to Setting of the mobile (About)
+    Click on Build Number (click 5 times until it says we are developers)
+    Go to Developer Options
+    Turn Off (Window animation scale, Transition animation scale, and Animator animation scale)"
+     */
     @Test
     fun `when_horoscope_is_selected_then_open_detail`(){
         onView(withId(R.id.rvHoroscope)).perform(
