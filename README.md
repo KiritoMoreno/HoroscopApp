@@ -55,14 +55,14 @@ Unit tests (UnitTest) are implemented to verify business logic and user interfac
 ## Project Structure
 
 
-| ### Horoscope Details | ### Horoscope |
+|  Horoscope |  Horoscope Details |
 |---|---|
-| <img src= "https://github.com/KiritoMoreno/HoroscopApp/blob/main/app/src/main/res/drawable/HoroscopUIDetails.webp" style="height: 20%; width:50%;"/> | <img src="https://github.com/KiritoMoreno/HoroscopApp/blob/main/app/src/main/res/drawable/HoroscopeUI.webp" style="height: 20%; width:90%;"/> |
+| <img src="https://github.com/KiritoMoreno/HoroscopApp/blob/main/app/src/main/res/drawable/HoroscopeUI.webp" style="height: 20%; width:50%;"/> | <img src= "https://github.com/KiritoMoreno/HoroscopApp/blob/main/app/src/main/res/drawable/HoroscopUIDetails.webp" style="height: 20%; width:50%;"/> |
 
-| ### Luck  | ### Luck Details |
+| Luck  | Luck Details |
 |---|---|
-| <img src="https://github.com/KiritoMoreno/HoroscopApp/blob/main/app/src/main/res/drawable/LuckUI.webp" style="height: 50%; width:90%;"/> | <img src="https://github.com/KiritoMoreno/HoroscopApp/blob/main/app/src/main/res/drawable/LuckUIDetails.webp" style="height: 20%; width:50%;"/> |
+| <img src="https://github.com/KiritoMoreno/HoroscopApp/blob/main/app/src/main/res/drawable/LuckUI.webp" style="height: 50%; width:50%;"/> | <img src="https://github.com/KiritoMoreno/HoroscopApp/blob/main/app/src/main/res/drawable/LuckUIDetails.webp" style="height: 20%; width:50%;"/> |
 
-| ### Palmistry  |  |
+| Palmistry  |  |
 |---|---|
 | <img src="https://github.com/KiritoMoreno/HoroscopApp/blob/main/app/src/main/res/drawable/PalmistryUI.webp" style="height: 20%; width:50%;"/> |  |
